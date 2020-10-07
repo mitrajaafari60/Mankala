@@ -2,7 +2,8 @@ Mankala-Game
 Web based game.
 
 Back-End: Java Spring Boot, Rest API, MVC architecture, JUnit, Gradle, (TomCat local server) -- Intellij 
-Front-End: HTML, CSS, Vanilla Javascript 
+Front-End: HTML, CSS, Javascript
+
 Made by Mitra Jaafari- Github
 
 Setup
