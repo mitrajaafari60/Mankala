@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="niuniverse.mankala.demo.MankalaApplicationTests" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-10-05T05:35:11" hostname="user-VivoBook-ASUSLaptop-X412FJ-R424FJ" time="2.273">
+  <properties/>
+  <testcase name="isGameFinished()" classname="niuniverse.mankala.demo.MankalaApplicationTests" time="1.993"/>
+  <testcase name="lastSoneInEmptyPit()" classname="niuniverse.mankala.demo.MankalaApplicationTests" time="0.053"/>
+  <testcase name="contextLoads()" classname="niuniverse.mankala.demo.MankalaApplicationTests" time="0.03"/>
+  <testcase name="checkValidation()" classname="niuniverse.mankala.demo.MankalaApplicationTests" time="0.05"/>
+  <testcase name="putStonesInPits()" classname="niuniverse.mankala.demo.MankalaApplicationTests" time="0.079"/>
+  <system-out><![CDATA[09:05:09.201 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+09:05:09.212 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+09:05:09.234 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [niuniverse.mankala.demo.MankalaApplicationTests] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+09:05:09.244 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [niuniverse.mankala.demo.MankalaApplicationTests], using SpringBootContextLoader
+09:05:09.246 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [niuniverse.mankala.demo.MankalaApplicationTests]: class path resource [niuniverse/mankala/demo/MankalaApplicationTests-context.xml] does not exist
+09:05:09.247 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [niuniverse.mankala.demo.MankalaApplicationTests]: class path resource [niuniverse/mankala/demo/MankalaApplicationTestsContext.groovy] does not exist
+09:05:09.247 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [niuniverse.mankala.demo.MankalaApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+09:05:09.248 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [niuniverse.mankala.demo.MankalaApplicationTests]: MankalaApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+09:05:09.279 [Test worker] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [niuniverse.mankala.demo.MankalaApplicationTests]
+09:05:09.327 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/user/projects/Mankalademo/build/classes/java/main/niuniverse/mankala/demo/MankalaApplication.class]
+09:05:09.328 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration niuniverse.mankala.demo.MankalaApplication for test class niuniverse.mankala.demo.MankalaApplicationTests
+09:05:09.407 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [niuniverse.mankala.demo.MankalaApplicationTests]: using defaults.
+09:05:09.407 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener, org.springframework.test.context.event.EventPublishingTestExecutionListener]
+09:05:09.416 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.transaction.TransactionalTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/TransactionDefinition]
+09:05:09.416 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Skipping candidate TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] due to a missing dependency. Specify custom listener classes or make the default listener classes and their required dependencies available. Offending class: [org/springframework/transaction/interceptor/TransactionAttribute]
+09:05:09.416 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@64d0c0d9, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@12288a78, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@2f4090c7, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1e0312b4, org.springframework.test.context.support.DirtiesContextTestExecutionListener@7cb7dfa5, org.springframework.test.context.event.EventPublishingTestExecutionListener@2a9af101, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1f78a3d, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@7e7ae05, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@45ef03ab, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@3880f0ee, org.springframework.boot.test.autoconfigure.webservices.client.MockWebServiceServerTestExecutionListener@59b23a1, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@3fb63291]
+09:05:09.419 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@441c1c33 testClass = MankalaApplicationTests, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@c05a11a testClass = MankalaApplicationTests, locations = '{}', classes = '{class niuniverse.mankala.demo.MankalaApplication}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@5616d92c, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@30dddfdd, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@661b501b, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@547c6d51, org.springframework.boot.test.context.SpringBootTestArgs@1], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
+09:05:09.439 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.3.4.RELEASE)
+
+2020-10-05 09:05:09.676  INFO 29105 --- [    Test worker] n.mankala.demo.MankalaApplicationTests   : Starting MankalaApplicationTests on user-VivoBook-ASUSLaptop-X412FJ-R424FJ with PID 29105 (started by user in /home/user/projects/Mankalademo)
+2020-10-05 09:05:09.677  INFO 29105 --- [    Test worker] n.mankala.demo.MankalaApplicationTests   : No active profile set, falling back to default profiles: default
+2020-10-05 09:05:10.523  INFO 29105 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-05 09:05:10.651  INFO 29105 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2020-10-05 09:05:10.972  INFO 29105 --- [    Test worker] n.mankala.demo.MankalaApplicationTests   : Started MankalaApplicationTests in 1.514 seconds (JVM running for 2.456)
+Test4
+[0, 1, 5, 0, 3, 1, 26, 1, 0, 4, 1, 5, 0, 51]
+null
+Test3
+[5, 1, 4, 2, 4, 0, 20, 0, 3, 5, 0, 2, 3, 43]
+stones.get(lastPit):5
+null
+Test1
+[5, 2, 0, 0, 5, 3, 21, 5, 3, 4, 0, 3, 4, 38]
+true
+Test2
+[2, 3, 4, 5, 0, 4, 18, 4, 0, 2, 0, 2, 0, 46]
+pickedStonesNo:0 pitClicked :4
+niuniverse.mankala.demo.models.PlayingStonesMsg@363438bf
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

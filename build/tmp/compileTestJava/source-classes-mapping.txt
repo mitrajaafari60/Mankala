@@ -1,0 +1,2 @@
+niuniverse/mankala/demo/MankalaApplicationTests.java
+ niuniverse.mankala.demo.MankalaApplicationTests

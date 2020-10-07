@@ -1,0 +1,16 @@
+niuniverse/mankala/demo/models/RequestMessage.java
+ niuniverse.mankala.demo.models.RequestMessage
+niuniverse/mankala/demo/models/CapturingStonesMsg.java
+ niuniverse.mankala.demo.models.CapturingStonesMsg
+niuniverse/mankala/demo/MankalaApplication.java
+ niuniverse.mankala.demo.MankalaApplication
+niuniverse/mankala/demo/models/GameIsFinishedMsg.java
+ niuniverse.mankala.demo.models.GameIsFinishedMsg
+niuniverse/mankala/demo/models/ResponseMessage.java
+ niuniverse.mankala.demo.models.ResponseMessage
+niuniverse/mankala/demo/models/PlayingStonesMsg.java
+ niuniverse.mankala.demo.models.PlayingStonesMsg
+niuniverse/mankala/demo/controllers/GameRules.java
+ niuniverse.mankala.demo.controllers.GameRules
+niuniverse/mankala/demo/controllers/GameController.java
+ niuniverse.mankala.demo.controllers.GameController

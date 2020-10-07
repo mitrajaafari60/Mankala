@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mankala</title>
+</head>
+<style>
+    h1 {
+        font-size: 80px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 5px;
+    }
+
+    .GameContainer {
+        background-color: #6600aa;
+        padding: 20px;
+        font-size: 30px;
+        border-radius: 50px;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+
+    .TopUI {
+        display: grid;
+        grid-template-columns: 3fr 3fr 3fr;
+        text-align: center;
+        margin: 20px;
+        font-size: 40px;
+
+    }
+
+    .Board {
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        grid-gap: 3px;
+        padding: 10px;
+        border: 20px solid #ffff;
+        border-radius: 35px;
+    }
+
+    .Mankala-left {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .Mankala-right {
+        grid-column-start: 8;
+        grid-column-end: 9;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+
+    .Pit {
+        background-color: rgba(255, 0, 0, 0.7);
+        padding: 20px;
+        margin: 0;
+        border: 3px solid #ffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Pit2 {
+        background-color: rgba(0, 0, 255, 0.7);
+        padding: 20px;
+        margin: 0;
+        border: 3px solid #ffff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+</style>
+
+<body>
+<div class="GameContainer">
+    <div class="TopUI">
+        <div>Player 1 scores</div>
+        <div >playing</div>
+        <div>Player 2 scores</div>
+    </div>
+    <div class="TopUI">
+        <div class="UI-Element Player1Score" id="Player1">0</div>
+        <div class="UI-Element Player" id="Playing" >1</div>
+        <div class="UI-Element Player2Score" id="Player2">0</div>
+    </div>
+    <div class="Board">
+        <div class="Mankala-left Pit" id="6">0</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="5">6</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="4">6</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="3">6</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="2">6</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="1">6</div>
+        <div class="Pit" onclick="OnPitClick(this.id)" id="0">6</div>
+        <div class="Mankala-right Pit2" id="13">0</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="7">6</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="8">6</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="9">6</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="10">6</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="11">6</div>
+        <div class="Pit2" onclick="OnPitClick(this.id)" id="12">6</div>
+    </div>
+    <div class="Dialog">
+        <h2 id="DialogMessage">Start Playing</h2>
+    </div>
+
+    </div>
+
+</body>
+<script type="text/javascript" language="JavaScript">
+    function OnPitClick(clickedId) {
+        stones=[Number(document.getElementById("0").innerText),
+            Number(document.getElementById("1").innerText),
+            Number(document.getElementById("2").innerText),
+            Number(document.getElementById("3").innerText),
+            Number(document.getElementById("4").innerText),
+            Number(document.getElementById("5").innerText),
+            Number(document.getElementById("6").innerText),
+            Number(document.getElementById("7").innerText),
+            Number(document.getElementById("8").innerText),
+            Number(document.getElementById("9").innerText),
+            Number(document.getElementById("10").innerText),
+            Number(document.getElementById("11").innerText),
+            Number(document.getElementById("12").innerText),
+            Number(document.getElementById("13").innerText)];
+
+        pitclicked=Number(clickedId)
+        activePlayer = Number(document.getElementById("Playing").innerText);
+        PostGame(stones,pitclicked, activePlayer);
+    }
+
+
+    function GameViewFromResonse(responseModel) {
+        var obj = responseModel.success;
+        if(responseModel.success == true){
+            document.getElementById("DialogMessage").innerText = "wait.. putting stones in pits";
+
+            FillPitsData(responseModel.playStonesMsg.stonesInPits);
+            document.getElementById("Playing").innerText=responseModel.playStonesMsg.nextPlayerNo;
+            document.getElementById("Player1").innerText=responseModel.playStonesMsg.scorePlayer1;
+            document.getElementById("Player2").innerText=responseModel.playStonesMsg.scorePlayer2;
+            if (responseModel.otherSideStonsMsg !=null){
+                setTimeout(function(){ CapturingStonesFunc(responseModel); }, 300);
+            }
+            if (responseModel.gameIsFinishedMg !=null){
+                setTimeout(function(){ FinishingFunc(responseModel); }, 300);
+            }
+            document.getElementById("DialogMessage").innerText = "stones putted.Next player"+document.getElementById("Playing").innerText;
+        }else{
+            document.getElementById("DialogMessage").innerText = "Invalid Pit clicked";
+        }
+
+    }
+
+    function FillPitsData(stonesInPits){
+        document.getElementById("0").innerText=stonesInPits[0];
+        document.getElementById("1").innerText=stonesInPits[1];
+        document.getElementById("2").innerText=stonesInPits[2];
+        document.getElementById("3").innerText=stonesInPits[3];
+        document.getElementById("4").innerText=stonesInPits[4];
+        document.getElementById("5").innerText=stonesInPits[5];
+        document.getElementById("6").innerText=stonesInPits[6];
+        document.getElementById("7").innerText=stonesInPits[7];
+        document.getElementById("8").innerText=stonesInPits[8];
+        document.getElementById("9").innerText=stonesInPits[9];
+        document.getElementById("10").innerText=stonesInPits[10];
+        document.getElementById("11").innerText=stonesInPits[11];
+        document.getElementById("12").innerText=stonesInPits[12];
+        document.getElementById("13").innerText=stonesInPits[13];
+
+    }
+    function CapturingStonesFunc(responseModel){
+        document.getElementById("DialogMessage").innerText = "Wait! you put in Empty Pit.Next player"+document.getElementById("Playing").innerText;
+        FillPitsData(responseModel.otherSideStonsMsg.stonesInPits);
+        document.getElementById("Playing").innerText=responseModel.otherSideStonsMsg.nextPlayerNo;
+        document.getElementById("Player1").innerText=responseModel.otherSideStonsMsg.scorePlayer1;
+        document.getElementById("Player2").innerText=responseModel.otherSideStonsMsg.scorePlayer2;
+    }
+
+    function FinishingFunc(responseModel){
+        document.getElementById("DialogMessage").innerText = "congratulation! you winned:Player"+responseModel.gameIsFinishedMg.winner;
+        FillPitsData(responseModel.gameIsFinishedMg.CaptureStons.stonesInPits);
+        document.getElementById("Playing").innerText=responseModel.gameIsFinishedMg.CaptureStons.nextPlayerNo;
+        document.getElementById("Player1").innerText=responseModel.gameIsFinishedMg.CaptureStons.scorePlayer1;
+        document.getElementById("Player2").innerText=responseModel.gameIsFinishedMg.CaptureStons.scorePlayer2;
+
+    }
+
+    function PostGame(stonsinPits,Index, Player){
+        var result;
+        postRequest('/playgame',{
+            "StonesInPits": stonsinPits,
+            "PlayerNo": Player,
+            "PickedPitNo": Index
+        }).then(data => {
+            GameViewFromResonse(data);
+        }) .catch(error => console.log(error));
+    }
+
+    function postRequest(url, data){
+        return fetch(url, {
+            credential: 'same-origin',
+            method: 'POST',
+            body: JSON.stringify(data),
+            headers: new Headers({
+                'Content-Type':'application/json'
+            }),
+        }).then(response => response.json())
+    }
+
+</script>
+</html>
